@@ -1,0 +1,122 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  background-color: @background;
+  color: @foreground;
+
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: CaskaydiaMono Nerd Font;
+  font-size: 12px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces button {
+  all: initial; /* Resetting all styles */
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+  /* Add a smooth transition for color changes */
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+/* --- Improved Module Styling --- */
+#tray,
+#cpu,
+#memory, /* Added memory module */
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#clock,
+#custom-omarchy,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+  /* Add smooth transition for hover effect */
+  transition: background-color 0.3s ease;
+}
+
+#custom-expand-icon {
+  margin-right: 7px;
+}
+
+/* --- Interactivity: Hover Effects --- */
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#clock:hover,
+#custom-omarchy:hover,
+#custom-update:hover,
+#workspaces button:hover {
+    background-color: @surface1; /* Use a highlight color from your theme */
+}
+
+
+/* --- State-Based Styling for At-a-Glance Info --- */
+
+/* Highlight the active workspace */
+#workspaces button.active {
+    background-color: @blue;
+    color: @background;
+}
+
+/* Make urgent workspaces flash */
+#workspaces button.urgent {
+    background-color: @red;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+        color: @foreground;
+    }
+}
+
+/* Style the battery based on its state */
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.charging, #battery.plugged {
+    color: @green;
+}
+
+/* Gray out modules when disconnected/disabled */
+#network.disconnected,
+#bluetooth.disabled {
+    color: @overlay0; /* A dimmer color from your theme */
+}
+
+
+/* --- Polished Tooltip --- */
+tooltip {
+  background-color: @base;
+  border: 1px solid @overlay1;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+tooltip label {
+  color: @text;
+}
