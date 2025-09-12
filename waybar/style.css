@@ -235,3 +235,29 @@ calendar:selected {
     background-color: @blue;
     color: @base;
 }
+
+/* System Tray */
+#tray {
+    background-color: transparent;
+    margin: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+#tray menu {
+    background-color: @surface0;
+    color: @text;
+    border: 1px solid @surface1;
+    border-radius: 8px;
+}
+
+#tray menu menuitem:hover {
+    background-color: @surface1;
+}

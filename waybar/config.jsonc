@@ -5,7 +5,14 @@
   "spacing": 0,
   "modules-left": ["custom/omarchy","hyprland/workspaces"],
   "modules-center": ["clock", "custom/update"],
-  "modules-right": ["network","battery","backlight","pulseaudio","bluetooth","cpu", "memory"],
+  "modules-right": ["tray","network","battery","backlight","pulseaudio","bluetooth","cpu", "memory"],
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8,
+    "show-passive-items": true,
+    "reverse-direction": false
+  },
 
   "hyprland/workspaces": {
     "disable-scroll": true,
